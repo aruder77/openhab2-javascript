@@ -1,6 +1,6 @@
 'use strict';
 
-load('./../conf/automation/jsr223/jslib/JSRule.js');
+load('./../jslib/JSRule.js');
 
 logInfo("################# SimpleRuleExamples.js ##################", TimerTrigger);
 

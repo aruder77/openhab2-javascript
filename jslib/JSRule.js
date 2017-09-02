@@ -5,8 +5,8 @@ se.importPreset("RuleSimple");
 se.importPreset("RuleFactories");
 se.importPreset("default");
 
-load('./../conf/automation/jsr223/jslib/helper.js');
-load('./../conf/automation/jsr223/jslib/triggersAndConditions.js');
+load('./../jslib/helper.js');
+load('./../jslib/triggersAndConditions.js');
 
 //Simplifies spelling for rules.
 (function(context) {

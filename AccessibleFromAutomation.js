@@ -1,7 +1,7 @@
 'use strict';
 
-load('./../conf/automation/jsr223/jslib/helper.js');
-load('./../conf/automation/jsr223/jslib/triggersAndConditions.js');
+load('./../jslib/helper.js');
+load('./../jslib/triggersAndConditions.js');
 
 logInfo("################# AccessibleFromAutomation.js ##################");
 
