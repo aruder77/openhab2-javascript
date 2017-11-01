@@ -8,42 +8,6 @@ if(TriggerHandler == undefined)var TriggerHandler = Java.type("org.eclipse.smart
 if(Trigger == undefined)var Trigger = Java.type("org.eclipse.smarthome.automation.Trigger");
 
 
-// ### StartupTrigger ### DOES NOT WORK!!
-var _StartupTriggerHandlerFactory = new TriggerHandlerFactory(){
-	get: function(trigger){
-		logWarn(" -#### #### #### #### #### get trigger "+__LINE__, trigger); 
-		//return _StartupTriggerHandlerFactory.handler(trigger);
-		return  new TriggerHandler(){
-			setRuleEngineCallback: function(rule_engine_callback){
-				logWarn(" -#### TriggerHandler setRuleEngineCallback "+__LINE__, " setRuleEngineCallback ");
-				rule_engine_callback.triggered(trigger, {});
-			}, 
-			dispose: function(){
-				logWarn(" -#### TriggerHandler dispose "+__LINE__, " dispose ");
-			}
-		};
-	},
-	ungetHandler: function( module, ruleUID, handler){ 
-		logWarn(" -#### ungetHandler "+__LINE__, module);
-		logWarn(" -#### ungetHandler "+__LINE__, ruleUID);
-		logWarn(" -#### ungetHandler "+__LINE__, handler);
-	},
-	dispose: function(){
-		logWarn(" -#### dispose "+__LINE__, " dispose ");
-	}
-};
-var STARTUP_MODULE_ID = "jsr223.StartupTrigger";
-
-automationManager.addTriggerType(new TriggerType(
-    STARTUP_MODULE_ID, 
-	[],
-    "the rule is activated", 
-    "Triggers when a rule is activated the first time",
-    new HashSet(), 
-	Visibility.VISIBLE, 
-	[]));
-	
-automationManager.addTriggerHandler(STARTUP_MODULE_ID, _StartupTriggerHandlerFactory);
 
 var StartupTrigger = function(triggerName){
     return new Trigger( getTrName(triggerName), "jsr223.StartupTrigger", new Configuration());
