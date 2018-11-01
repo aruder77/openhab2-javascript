@@ -1,8 +1,7 @@
 'use strict';
   
 	var mainPath 				= './../';
-	var automationPath 			= '/etc/openhab2/automation/';
-	var mainPath 				= automationPath + 'jsr223/';
+	var automationPath 			= mainPath + '../';
 	//https://wiki.shibboleth.net/confluence/display/IDP30/ScriptedAttributeDefinition
 	var logger 					= Java.type("org.slf4j.LoggerFactory").getLogger("org.eclipse.smarthome.automation.module.script.rulesupport.internal.shared.SimpleRule");
 	var uuid 					= Java.type("java.util.UUID");
